@@ -3,11 +3,14 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Init</h1>
+    <h1><strong id="username"  tag="{{auth()->user()->username}}">{{auth()->user()->username}}</strong> Welcome... to this beautiful admin panel.</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <div  id="prueba">
+
+    </div>
+
 @stop
 
 @section('css')
@@ -15,5 +18,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+    </script>
 @stop

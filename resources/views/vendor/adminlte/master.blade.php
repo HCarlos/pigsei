@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     {{-- Custom Meta Tags --}}
     @yield('meta_tags')
 
@@ -50,6 +51,9 @@
     {{-- Custom Stylesheets (post AdminLTE) --}}
     @yield('adminlte_css')
 
+    @vitereactrefresh
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
     {{-- Favicon --}}
     @if(config('adminlte.use_ico_only'))
         <link rel="shortcut icon" href="{{ asset('favicons/favicon.ico') }}" />
@@ -73,6 +77,7 @@
         <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     @endif
 
+
 </head>
 
 <body class="@yield('classes_body')" @yield('body_data')>
@@ -88,6 +93,7 @@
         <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
     @else
         <script src="{{ mix(config('adminlte.laravel_mix_js_path', 'js/app.js')) }}"></script>
+
     @endif
 
     {{-- Extra Configured Plugins Scripts --}}
